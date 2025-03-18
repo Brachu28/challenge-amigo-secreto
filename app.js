@@ -27,4 +27,22 @@ function sortearAmigo() {
 
     amigos = [];
     document.getElementById('listaAmigos').innerHTML = '';
+
+    setTimeout(() => {
+        let reiniciar = confirm('¿Volver a jugar?');
+        
+        if (reiniciar) {
+            amigos = [];
+            document.getElementById('listaAmigos').innerHTML = '';
+            document.getElementById('resultado').innerHTML = '';
+            document.getElementById('amigo').value = '';
+        } else {
+            alert('Gracias por jugar');
+            amigos = [];
+            document.getElementById('listaAmigos').innerHTML = '';
+            document.getElementById('resultado').innerHTML = '';
+            document.getElementById('amigo').value = '';
+        }
+    }, 500);
+    
 }
