@@ -11,8 +11,6 @@ function agregarAmigo() {
     
     amigos.push(nombre);
     input.value = '';
-    
-    // Actualizar lista
     document.getElementById('listaAmigos').innerHTML = 
         amigos.map(nombre => `<li>${nombre}</li>`).join('');
 }
@@ -23,7 +21,10 @@ function sortearAmigo() {
         return;
     }
     
-    const ganador = amigos[Math.floor(Math.random() * amigos.length)];
+    let ganador = amigos[Math.floor(Math.random() * amigos.length)];
     document.getElementById('resultado').innerHTML = 
         `<li>¡Amigo secreto: ${ganador}!</li>`;
+
+    amigos = [];
+    document.getElementById('listaAmigos').innerHTML = '';
 }
